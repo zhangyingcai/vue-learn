@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>key管理可复用的元素</title>
+</head>
+<body>
+    <div id="app">
+        <template v-if="loginType === true">
+            <label>Username</label>
+            <input placeholder="Enter your username" v-model="username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" v-model="email">
+        </template>
+        <p>{{ username }}</p>
+        <p>{{ email }}</p>
+        <button @click="click">切换</button>
+        <template>
+            <div>
+                <input v-on:keyup.enter="submit">
+            </div>
+            <div style="width: 200px;height: 200px;overflow: auto;" v-on:scroll.passive="onScroll">
+                <div>
+                    <!-- 点击事件将只会触发一次 -->
+<a v-on:click.once="doThis"></a>
+不像其它只能对原生的 DOM 事件起作用的修饰符，.once 修饰符还能被用到自定义的组件事件上。如果你还没有阅读关于组件的文档，现在大可不必担心。
+
+2.3.0 新增
+
+Vue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符。
+
+<!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->
+<!-- 而不会等待 `onScroll` 完成  -->
+<!-- 这其中包含 `event.preventDefault()` 的情况 -->
+<div v-on:scroll.passive="onScroll">...</div>
+这个 .passive 修饰符尤其能够提升移动端的性能。
+
+不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，.passive 会告诉浏览器你不想阻止事件的默认行为。
+
+按键修饰符
+在监听键盘事件时，我们经常需要检查详细的按键。Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：
+
+<!-- 只有在 `key` 是 `Enter` 时调用 `vm.submit()` -->
+<input v-on:keyup.enter="submit">
+你可以直接将 KeyboardEvent.key 暴露的任意有效按键名转换为 kebab-case 来作为修饰符。
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                username: '',
+                email: '',
+                loginType: true
+            }
+        },
+        methods: {
+            click(){
+                this.loginType = !this.loginType
+            },
+            submit(){
+                alert('enter');
+            },
+            onScroll(){
+                console.log('我在scroll')
+            }
+        },
+    })
+    </script>
+</body>
+</html>

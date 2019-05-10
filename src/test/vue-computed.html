@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style></style>
+    <div id="app">
+        <div class="input-bar">
+            <input v-model="word" placeholder="请输入英文" @input="update">
+            <button v-show="state" @click="handleClear">x</button>
+        </div>
+        
+        <p v-show="state" class="list">{{reword}}</p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                word: '',
+                state: false
+            }
+        },
+        computed: {
+            reword: function(){
+                return this.changeWord(this.word)
+            }
+        },
+        mounted() {
+            var clipboard = new ClipboardJS('.list');
+            // 成功回调
+            clipboard.on('success', function (e) { 
+                e.clearSelection();
+            });
+            // 失败回调
+            clipboard.on('error', function (e) {
+            });
+        },
+        methods: {
+            getAnswer: function(){
+                if(this.question.indexOf('?') === -1){
+                    this.answer = 'Questions usually contain a question mark. ;-)'
+                    return
+                }
+                this.answer = 'Thinking...'
+                var vm = this
+                setTimeout(function(){
+                    vm.answer = "yes"
+                }, 2000)
+            },
+            handleClear () {
+                this.word = '';
+            },
+            changeWord (word) {
+                var newMessage = '';
+                for (var codePoint of word) {
+                    codePoint = codePoint.charCodeAt(0);
+                    // A - Z 转换
+                    if (codePoint >= 65 && codePoint <= 90) {
+                        codePoint += 120315;
+                        newMessage += String.fromCodePoint(codePoint);
+                    }
+                    // a - z 转换
+                    else if (codePoint >= 97 && codePoint <= 122) {
+                        codePoint += 120309;
+                        newMessage += String.fromCodePoint(codePoint);
+                    } else {
+                        newMessage += String.fromCodePoint(codePoint);
+                    }
+                }
+                return newMessage;
+            },
+            update() {
+                this.state = this.word.length
+            }
+        },
+    })
+    </script>
+</body>
+</html>
