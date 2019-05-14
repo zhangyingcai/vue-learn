@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="APP内签到积分奖励说明">
+    <meta name="description" content="APP内签到积分奖励说明">
+    <title>APP内签到积分奖励说明</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            font-family: Microsoft Yahei, 微软雅黑, Tahoma, Helvetica, 'SimSun', sans-serif;
+            background-color: #9F9FFF;
+            margin: 0;
+        }
+
+        .bcat-header {
+            padding: 3.125rem 1rem 2.5rem 1.5rem;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNFOUIwNDM3NzJEMjExRTlCNTJFRUUzNDQ4RDU2OEUwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNFOUIwNDM4NzJEMjExRTlCNTJFRUUzNDQ4RDU2OEUwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0U5QjA0MzU3MkQyMTFFOUI1MkVFRTM0NDhENTY4RTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0U5QjA0MzY3MkQyMTFFOUI1MkVFRTM0NDhENTY4RTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6yCtPbAAAAl0lEQVR42mL8//8/AzUBEwOVweA3kAVdoKqaNAPaWklzoS8Q7wPiz1AMYvuQ6+UWIN4ExI5AzAPFIPZmqBxJBoJcgc/z1VDXE21gERHBV0iKgSZEGGhC7WTDSIqBZ4gw8DQpBvYTYWA/KQaCkkYrHsNaoWpICsMaIPYH4v1A/BWKQWw/qBxxWQ8NbIJi4mNqtDykGAAEGAB9uh2INCkD0wAAAABJRU5ErkJggg==) repeat;
+        }
+
+        .bcat-title {
+            position: relative;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .bcat-header::before{
+            position: absolute;
+            content: '';
+            background: url(./bcathub/saymao@3x.png) 100% 100%;
+            background-size:cover;
+            width: 130px;
+            height: 97px;
+            right: 1.25rem; 
+            top: 4.3rem;
+        }
+
+        .bcat-shadow-title {
+            font-weight: 600;
+            text-shadow: 1px 1px #2E208C, -1px -1px #2E208C, 1px -1px #2E208C, -1px 1px #2E208C;
+            color: white;
+            letter-spacing: 3px;
+        }
+
+        .bcat-card-first {
+            display: block;
+            padding-bottom: 2.5rem;
+            background-color: #6C6CFB;
+            overflow: hidden;
+        }
+
+        .bcat-card {
+            display: block;
+            position: relative;
+            margin: 0 .625rem;
+            border: 2px solid #2F238F;
+            border-radius: 10px;
+            background-color: #FFFDE8;
+        }
+
+        .bcat-card::after,
+        .bcat-card::before {
+            position: absolute;
+            content: '';
+            background-color: #F1D246;
+            border: 2px solid #2F238F;
+            width: .625rem;
+            height: .625rem;
+            border-radius: 50%;
+            top: -8px;
+        }
+
+        .bcat-card::before {
+            left: 30%;
+        }
+
+        .bcat-card::after {
+            right: 30%;
+        }
+
+        .bcat-padd {
+            padding: 1.25rem;
+        }
+
+        .bcat-margin {
+            margin: 1.25rem;
+        }
+
+        .bcat-card .small-title {
+            width: 90px;
+            padding-left: .625rem;
+            font-size: .875rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: white;
+            background-color: #2F238F;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .bcat-card .title {
+            color: #2E208C;
+        }
+
+        .card-content {
+            font-size: .875rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: .8125rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        title {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin: auto;
+            font-size: 1.25rem;
+            border: 2px solid #2F238F;
+            border-radius: 1rem;
+            background-color: #F1D246;
+            padding: .3125rem 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        title::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 2px solid #2F238F;
+            border-radius: 1rem;
+            background-color: #E37192;
+            top: 5px;
+            left: -2px;
+            z-index: -1;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .mt-5 {
+            margin-top: 2rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 5rem;
+        }
+
+        /* 列表 */
+        .list {
+            display: flex;
+            padding-left: 1.875rem;
+            list-style: none;
+            flex-direction: column;
+        }
+
+        .list-item {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .list-item .img {
+            width: 50px;
+            height: auto;
+        }
+
+        .list-item .text-title {
+            font-weight: bolder;
+            font-size: .8125rem;
+        }
+
+        .list-item .text {
+            font-size: 1rem;
+            flex-grow: 1;
+            margin-left: 1.875rem;
+        }
+
+    </style>
+    <div id="app" class="content">
+        <section class="bcat-card-first">
+            <div class="bcat-header">
+                <h4 class="bcat-shadow-title bcat-title">APP内签到<br>积分奖励说明</h4>
+            </div>
+            <div class="bcat-card">
+                <h3 class="title text-center bcat-margin">签到积分奖励</h3>
+                <div class="small-title">
+                    奖励说明
+                </div>
+                <p class="bcat-margin card-content">
+                    为提升大猫城堡粘性，并且给与社区用户更多获得猫点积分的渠道。凡在app内签到页面进行签到，均可获得猫点奖励，奖励说明如下
+                </p>
+            </div>
+        </section>
+        <section>
+            <title class="bcat-shadow-title mt-5">常态奖励</title>
+            <div class="bcat-card mt-4">
+                <div class="small-title mt-5">
+                    签到与奖励
+                </div>
+                <ul class="list">
+                    <li class="list-item">
+                        <img class="img" src="bcathub/1@3x.png" alt="1">
+                        <div class="text">
+                            <p class="text-title">第一天</p>
+                            <p class="text-title">签到奖励2猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/2@3x.png" alt="2">
+                        <div class="text">
+                            <p class="text-title">第二天</p>
+                            <p class="text-title">签到奖励4猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/3@3x.png" alt="3">
+                        <div class="text">
+                            <p class="text-title">第三天</p>
+                            <p class="text-title">签到奖励6猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/4@3x.png" alt="4">
+                        <div class="text">
+                            <p class="text-title">第四天</p>
+                            <p class="text-title">签到奖励8猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/5@3x.png" alt="5">
+                        <div class="text">
+                            <p class="text-title">第五天</p>
+                            <p class="text-title">签到奖励10猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/6@3x.png" alt="6">
+                        <div class="text">
+                            <p class="text-title">第六天</p>
+                            <p class="text-title">签到奖励12猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/7@3x.png" alt="7">
+                        <div class="text">
+                            <p class="text-title">第七天</p>
+                            <p class="text-title">签到奖励14猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/8@3x.png" alt="8">
+                        <div class="text">
+                            <p class="text-title">第八天</p>
+                            <p class="text-title">签到奖励20猫点</p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="bcat-margin card-content">
+                    连续签到八天以后，每天签到奖励20猫点，中途如果断签，则从第一天重新开始计算。
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <title class="bcat-shadow-title mt-5">额外奖励</title>
+            <div class="bcat-card mt-4">
+                <div class="small-title mt-5">
+                    额外奖励
+                </div>
+                <ul class="list">
+                    <li class="list-item">
+                        <img class="img" src="bcathub/7@3x.png" alt="7">
+                        <div class="text">
+                            <p class="text-title">连续七天签到</p>
+                            <p class="text-title">额外奖励30猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/30@3x.png" alt="30">
+                        <div class="text">
+                            <p class="text-title">连续30天签到</p>
+                            <p class="text-title">额外奖励100猫点</p>
+                        </div>
+                    </li>
+                    <li class="list-item">
+                        <img class="img" src="bcathub/365@3x.png" alt="365">
+                        <div class="text">
+                            <p class="text-title">连续365天签到</p>
+                            <p class="text-title">额外奖励10000猫点</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <title class="bcat-shadow-title mt-5">漏签说明</title>
+            <div class="bcat-card mt-4">
+                <div class="small-title mt-5">
+                    漏签说明
+                </div>
+                <p class="bcat-margin card-content">
+                    如果中途漏签，可申请补签，补签卡需要30猫点
+                </p>
+                <p class="bcat-margin card-content">
+                    1.严禁使用任何作弊手段签到，作弊者，官方有权清除其积分奖励。
+                </p>
+                <p class="bcat-margin card-content">
+                    2.签到功能主是要面向大猫城堡正式会员的福利，为避免薅羊毛党，非大猫城堡正式用户，猫点积分初始为－99999，无需签到，签到后所获积分仍会清零。
+                </p>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
