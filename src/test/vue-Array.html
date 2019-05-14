@@ -16,9 +16,22 @@
         }
     </style>
     <div id="app">
-        <button @click="changeColor">切换颜色</button>
-        <p :style="test">文字</p>
-
+        <input type="text" v-model="arr">
+        <button @click="add">新增</button>
+        <button @click="change">替换</button>
+        <button @click="dele">删除</button>
+        <ul>
+            <li v-for="(index, item, name, value) in data">
+                index:{{index}}-item:{{item}}-name:{{name}}-value:{{value}}
+            </li>
+        </ul>
+        <li v-for="(index, item, name, value) in ascdata">
+            index:{{index}}-item:{{item}}-name:{{name}}-value:{{value}}
+        </li>
+        <li v-for="(index, item, name, value) in desdata">
+                index:{{index}}-item:{{item}}-name:{{name}}-value:{{value}}
+            </li>
+        <p>最多三个参数，value,name 键名,index item另算</p>
         <div>数组更新检测，可以使用下面变异的方法，这时候是可以检测到更新的
             push()
             pop()
@@ -28,7 +41,15 @@
             sort()
             reverse()
         </div>
-        <p></p>
+        <p>对象的添加和删除也不能监听到。要想被监听到都放到 data 里，或者调用 $set 方法</p>
+        <p>copy 多个对象属性的时候使用 Object.assign() 或 _.extend()。这个时候要使用对象的属性来创建一个新的对象。
+                vm.userProfile = Object.assign({}, vm.userProfile, {
+                    age: 27,
+                    favoriteColor: 'Vue Green'
+                  })
+        </p>
+        <p>显示排序，而不实际改变或者重置原始数据</p>
+        <a href="https://www.jianshu.com/p/c81255e74225"> 报错解决办法</a>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
     <script>
@@ -36,32 +57,38 @@
         el: '#app',
         data() {
             return {
-                color: ['red', 'yellow', 'blue', 'green'],
-                test: {
-                    backgroundColor:''
-                },
-                classObject: {
-                    active: true,
-                    'text-center': false
-                }
+                arr: '',
+                data: ['123','13','woede','ccc'],
+                redata: ['123','13','woede','ccc'],
+                n:false
+            }
+        },
+        computed: {
+            ascdata: function(){
+                const arr = this.data.slice()
+                return arr.sort()
+            },
+            desdata: function(){
+                const arr = this.data.slice()
+                return arr.sort().reverse()
             }
         },
         methods: {
-            getAnswer: function(){
-                if(this.question.indexOf('?') === -1){
-                    this.answer = 'Questions usually contain a question mark. ;-)'
-                    return
-                }
-                this.answer = 'Thinking...'
-                var vm = this
-                setTimeout(function(){
-                    vm.answer = "yes"
-                }, 2000)
-            },
             changeColor() {
                 this.test.backgroundColor = this.color[Math.floor(Math.random()*4)]
+            },
+            add() {
+                this.data.push(this.arr)
+            },
+            change() {
+                // 两种方式改变
+                this.$set(this.data, 0, this.arr)
+                
+            },
+            dele() {
+                this.data.splice(this.data.length/2)
             }
-        },
+        }
     })
     </script>
 </body>
