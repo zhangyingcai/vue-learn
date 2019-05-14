@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .active{
+            color: rebeccapurple;
+        }
+        .text-center{
+            text-align: center;
+        }
+    </style>
+    <div id="app">
+        <button @click="changeColor">切换颜色</button>
+        <p :style="test">文字</p>
+
+        <div :class="classObject">vue class 绑定的是一个对象, 键是属性名, 值是控制开关, 还可以是数组。内联使用的时候，通过CSS属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用引号括起来) 来命名</div>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script>
+    var vue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                color: ['red', 'yellow', 'blue', 'green'],
+                test: {
+                    backgroundColor:''
+                },
+                classObject: {
+                    active: true,
+                    'text-center': false
+                }
+            }
+        },
+        methods: {
+            getAnswer: function(){
+                if(this.question.indexOf('?') === -1){
+                    this.answer = 'Questions usually contain a question mark. ;-)'
+                    return
+                }
+                this.answer = 'Thinking...'
+                var vm = this
+                setTimeout(function(){
+                    vm.answer = "yes"
+                }, 2000)
+            },
+            changeColor() {
+                this.test.backgroundColor = this.color[Math.floor(Math.random()*4)]
+            }
+        },
+    })
+    </script>
+</body>
+</html>
