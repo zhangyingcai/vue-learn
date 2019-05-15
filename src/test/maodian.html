@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="猫点使用文档">
+    <meta name="description" content="猫点使用文档">
+    <title>猫点使用文档</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            font-family: Microsoft Yahei, 微软雅黑, Tahoma, Helvetica, 'SimSun', sans-serif;
+            background-color: #6C6CFB;
+            margin: 0;
+            height: 100%;
+        }
+
+        .blue-color {
+            color: #2F238F;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .bcat-header {
+            padding: 3.125rem 1rem 2.5rem 1.5rem;
+        }
+
+        .bcat-title {
+            position: relative;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .bcat-shadow-title {
+            font-weight: 600;
+            text-shadow: 1px 1px #2E208C, -1px -1px #2E208C, 1px -1px #2E208C, -1px 1px #2E208C;
+            color: white;
+            letter-spacing: 3px;
+        }
+
+        .bcat-card-first {
+            display: block;
+            overflow: hidden;
+        }
+
+        .bcat-card {
+            display: block;
+            position: relative;
+            margin: 0 .625rem;
+            border: 2px solid #2F238F;
+            border-radius: 10px;
+            background-color: white;
+            color: #2F238F;
+        }
+
+        .card-header {
+            padding: 1rem 1.5rem;
+            font-size: 1.25rem;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 2.2rem;
+            height: 18px;
+            width: 6px;
+            background-color: #F1D246;
+        }
+
+        .bcat-padd {
+            padding: 1.25rem;
+        }
+
+        .bcat-margin {
+            margin: 2.25rem;
+        }
+
+        .bcat-card .small-title {
+            width: 80px;
+            padding-left: .625rem;
+            font-size: .875rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: white;
+            background-color: #2F238F;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .bcat-card .title {
+            color: #2E208C;
+        }
+
+        .card-content {
+            font-size: .875rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: .75rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+
+        .mb-1 {
+            margin-bottom: 1.75rem;
+        }
+
+        .ml-1 {
+            margin-left: 1.5rem;
+        }
+
+        .mt-5 {
+            margin-top: 5rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 5rem;
+        }
+
+        .content {
+            height: 100%;
+        }
+
+        /* 列表 */
+        .list {
+            list-style: none;
+            margin: 0;
+        }
+
+        .list-item {
+            display: block;
+            max-width: 100%;
+            padding: 1rem 0;
+            font-size: .875rem;
+            color: #2F238F;
+            text-decoration: none;
+        }
+
+        .list li {
+            border-bottom: 1px solid #ececec;
+        }
+
+        .list-item::after {
+            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiElEQVQ4T6XT4Q1AQAyG4dcGNmEENrARI9jECIzAJkaQ/pCQtPc13N9Ln157bcXPUwXxEzADp/I9wIJHYAd6hXhADWxAk0GiEtJIBFjpKaQEpBAFSCQLrEALHED3/BkFWB/CYHueamIxuATIzPeERoMkM5eAAVi8hnl7EfXAEBvnT8ukFvB1fwGi7CgR2Q9+RgAAAABJRU5ErkJggg==);
+            position: absolute;
+            right: 2rem;
+        }
+
+        .list li:last-child {
+            border-bottom: 0;
+        }
+
+        .nomore {
+            color: white;
+        }
+    </style>
+    <div id="app" class="content">
+        <section class="bcat-card-first mb-1">
+            <div class="bcat-header">
+                <h4 class="bcat-shadow-title bcat-title text-center">猫点使用文档</h4>
+            </div>
+            <div class="bcat-card">
+                <p class="bcat-margin card-content font-bold">
+                    猫点积分是大猫城堡及BCAT生态内一个中心化，平台内的常规积分，与BCAT不同的是猫点无任何区块链属性，该积分仅可在大猫城堡app内使用于非交易类型的互动场景，比如完成任务的奖励，贡献优质内容的奖励，用户间打赏，活动奖励的发放。
+                </p>
+                <p class="bcat-margin card-content font-bold">
+                    用户间不可交易、转移、转账猫点。猫点仅属于持有人在大猫城堡内的积分，"猫点"积分的最终价值呈现方式，但猫点可以转换为BCAT通用型积分，用户可随时通过网页端的BCAT盒子将你在社区内获得的猫点兑换成BCAT积分，以实现社区内的运营价值的有效导出。目前100猫点=1BCAT。
+                </p>
+                <p class="bcat-margin card-content font-bold">
+                    用户间如果有违规使用"猫点",通过计算机漏洞，官方规则漏洞非法获取"猫点"，一经发现将会限制使用积分功能，情节严重者并以封号处理。
+                </p>
+            </div>
+        </section>
+
+        <section class="bcat-card-first mb-1">
+            <div class="bcat-card">
+                <div class="card-header bcat-shadow-title mt-1">猫点使用文档</div>
+                <ul class="list">
+                    <li>
+                        <a class="list-item font-bold" href="#">1."猫点"积分概述及规范</a>
+                    </li>
+                    <li>
+                        <a class="list-item font-bold" href="#">2."猫点"转换为BCAT的方式及说明</a>
+                    </li>
+                    <li>
+                        <a class="list-item font-bold" href="#">3.如何获取猫点？</a>
+                    </li>
+                    <ul class="list">
+                            <li>
+                                <a class="list-item" href="#">3.1 APP内积分签到奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.2 优质内容及活跃用户奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.3 任务奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.4 虚拟礼物换取猫点积分</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.5 用户打赏奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.6 自我介绍奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.7 举报奖励</a>
+                            </li>
+    
+                            <li>
+                                <a class="list-item" href="#">3.8 社区贡献奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.9 社区活动奖励</a>
+                            </li>
+                            <li>
+                                <a class="list-item" href="#">3.10 社区游戏获取</a>
+                            </li>
+                        </ul>
+                </ul>
+            </div>
+        </section>
+
+        <section class="bcat-card-first mb-1">
+            <div class="bcat-card">
+                <div class="card-header bcat-shadow-title mt-1">"BCAT"app内使用文档</div>
+                <ul class="list">
+                    <li>
+                        <a class="list-item font-bold" href="#">大猫城堡通用型积分 : BCAT</a>
+                    </li>
+                    <li>
+                        <a class="list-item font-bold" href="#">1.2 APP下载及安装</a>
+                    </li>
+                    <li>
+                        <a class="list-item font-bold" href="#">1.3 登录与注册</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+
+        <p class="nomore mt-5 mb-5 text-center">没有更多啦~</p>
+    </div>
+</body>
+
+</html>
