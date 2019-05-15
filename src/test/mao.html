@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="BCAT通用型积分概述及使用规范">
+    <meta name="description" content="BCAT通用型积分概述及使用规范">
+    <title>BCAT通用型积分概述及使用规范</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            font-family: Microsoft Yahei, 微软雅黑, Tahoma, Helvetica, 'SimSun', sans-serif;
+            background-color: #9F9FFF;
+            margin: 0;
+        }
+
+        .bcat-header {
+            padding: 3.125rem 1rem 2.5rem 1.5rem;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNFOUIwNDM3NzJEMjExRTlCNTJFRUUzNDQ4RDU2OEUwIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNFOUIwNDM4NzJEMjExRTlCNTJFRUUzNDQ4RDU2OEUwIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0U5QjA0MzU3MkQyMTFFOUI1MkVFRTM0NDhENTY4RTAiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0U5QjA0MzY3MkQyMTFFOUI1MkVFRTM0NDhENTY4RTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6yCtPbAAAAl0lEQVR42mL8//8/AzUBEwOVweA3kAVdoKqaNAPaWklzoS8Q7wPiz1AMYvuQ6+UWIN4ExI5AzAPFIPZmqBxJBoJcgc/z1VDXE21gERHBV0iKgSZEGGhC7WTDSIqBZ4gw8DQpBvYTYWA/KQaCkkYrHsNaoWpICsMaIPYH4v1A/BWKQWw/qBxxWQ8NbIJi4mNqtDykGAAEGAB9uh2INCkD0wAAAABJRU5ErkJggg==) repeat;
+        }
+
+        .bcat-title {
+            position: relative;
+            font-size: 1.75rem;
+            margin: 0;
+        }
+
+        .bcat-header::before {
+            position: absolute;
+            content: '';
+            background: url(https://img.bcathub.com/bcathub/bcatinfo/saymao@3x.png) 100% 100%;
+            background-size: cover;
+            width: 130px;
+            height: 97px;
+            right: 1.25rem;
+            top: 4.3rem;
+        }
+
+        .bcat-shadow-title {
+            font-weight: 600;
+            text-shadow: 1px 1px #2E208C, -1px -1px #2E208C, 1px -1px #2E208C, -1px 1px #2E208C;
+            color: white;
+            letter-spacing: 3px;
+        }
+
+        .bcat-card-first {
+            display: block;
+            padding-bottom: 2.5rem;
+            background-color: #6C6CFB;
+            overflow: hidden;
+        }
+
+        .bcat-card {
+            display: block;
+            position: relative;
+            margin: 0 .625rem;
+            border: 2px solid #2F238F;
+            border-radius: 10px;
+            background-color: #FFFDE8;
+        }
+
+        .bcat-card::after,
+        .bcat-card::before {
+            position: absolute;
+            content: '';
+            background-color: #F1D246;
+            border: 2px solid #2F238F;
+            width: .625rem;
+            height: .625rem;
+            border-radius: 50%;
+            top: -8px;
+        }
+
+        .bcat-card::before {
+            left: 30%;
+        }
+
+        .bcat-card::after {
+            right: 30%;
+        }
+
+        .bcat-padd {
+            padding: 1.25rem;
+        }
+
+        .bcat-margin {
+            margin: 1.25rem;
+        }
+
+        .bcat-card .small-title {
+            width: 80px;
+            padding-left: .625rem;
+            font-size: .875rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: white;
+            background-color: #2F238F;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .bcat-card .title {
+            color: #2E208C;
+        }
+
+        .card-content {
+            font-size: .875rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .small-text {
+            font-size: .75rem;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        title {
+            display: block;
+            position: relative;
+            width: 200px;
+            margin: auto;
+            font-size: 1.25rem;
+            border: 2px solid #2F238F;
+            border-radius: 1rem;
+            background-color: #F1D246;
+            padding: .3125rem 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        title::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 2px solid #2F238F;
+            border-radius: 1rem;
+            background-color: #E37192;
+            top: 5px;
+            left: -2px;
+            z-index: -1;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .mt-5 {
+            margin-top: 2rem;
+        }
+
+        .mb-5 {
+            margin-bottom: 5rem;
+        }
+
+        .bcat-link {
+            color: #3399D7;
+            text-decoration: none;
+        }
+    </style>
+    <div class="content">
+        <section class="bcat-card-first">
+            <div class="bcat-header">
+                <h4 class="bcat-shadow-title bcat-title">BCAT通用型积分<br>概述及使用规范</h4>
+            </div>
+            <div class="bcat-card">
+                <h3 class="title text-center bcat-margin">BCAT通用型积分</h3>
+                <div class="small-title">
+                    积分概述
+                </div>
+                <p class="bcat-margin card-content">
+                    BCAT是一个可跨平台使用的多功能多维度积分系统。其不仅限应用于app，还应用于大猫城堡未来下设的各项互联网产品。其借助区块链技术，具备总量固定，记录不可篡改，官方可回兑等特点。
+                </p>
+                <p class="bcat-margin card-content">
+                    BCAT积分映射着大猫城堡内的核心价值传递。社区内，
+                    真正用于积分商城，服务兑换，商品兑换，价值传递，官方回兑的场景，均使用BCAT积分，同时BCAT积分可从平台内部中心化网络发送至区块链网络。关于BCAT详细使用说明，请浏览
+                    <a class="bcat-link" href="https://www.bcat.one">BCAT官方站点</a>。
+                </p>
+                <p class="bcat-margin card-content">
+                    同时BCAT承担着导出社区内常规积分“猫点”价值的导出功能，使社区内用户在社区内获得的“猫点”积分拥有更多可扩展的价值。
+                </p>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
