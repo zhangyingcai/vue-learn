@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{ count }}</p>
+        <p>{{ countAlias }}</p>
+        <p>{{ countPlusLocalState }}</p>
+        <p>{{ countDouble }}</p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.0/vuex.min.js"></script>
+    <script>
+        // import {mapState} from 'vuex';
+        const store = new Vuex.Store({
+            state:{
+                count:2
+            },
+            getters:{
+                countDouble:state => state.count * 2
+            }
+        });
+    new Vue({
+        el: '#app',
+        store,
+        data() {
+            return {
+                localCount: 3,
+                countDouble: this.$store.getters.countDouble
+            }
+        },
+        computed:{
+            ...Vuex.mapState({
+                // 传字符串参数 'count' 等同于 `state => state.count`
+                count:'count',
+                // 箭头函数可使代码更简练
+                countAlias: state => state.count,
+                // 为了能够使用 `this` 获取局部状态，必须使用常规函数
+                countPlusLocalState (state) {
+                return state.count + this.localCount
+                }
+            })
+        }
+    })
+    </script>
+</body>
+</html>
