@@ -35,7 +35,7 @@
         },
         computed: {
             ViewComponent (){
-                return routers[window.location.pathname || '/'] || NotFound
+                return routers[window.location.pathname] || NotFound
             }
         },
         watch: {
