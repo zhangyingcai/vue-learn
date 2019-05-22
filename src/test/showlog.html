@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="我的积分">
+    <meta name="description" content="我的积分">
+    <title>我的积分</title>
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            font-family: Microsoft Yahei, 微软雅黑, Tahoma, Helvetica, 'SimSun', sans-serif;
+            background-color: #F6F6F6;
+            margin: 0;
+            height: 100%;
+        }
+        .head-back{
+            padding: 1.313rem 0 9.5rem 0;
+            font-size: 1.6875rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            background: -webkit-linear-gradient(left, #FFB726 , #FF9C07); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, #FFB726, #FF9C07); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, #FFB726, #FF9C07); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, #FFB726 , #FF9C07); /* 标准的语法 */
+        }
+        .card{
+            position: absolute;
+            display: block;
+            width: 90%;
+            top: 5rem;
+            margin: 0 5%;
+            background-color: rgba(255, 250, 243, .95);
+            border-radius: 1rem;
+            box-shadow: 0 7px 5px #efefef;
+        }
+        .card-head{
+            display: flex;
+            padding: 1rem 1rem;
+            border-bottom: 1px solid #F1F0F4;
+        }
+        .card-head .title{
+            font-size: 0.8125rem;
+            font-weight: bold;
+            color: #C8C7CC;
+        }
+       .small-title{
+            font-size: 1rem;
+            font-weight: bold;
+            color: #242E42;
+        }
+        .ml-1{ margin-left: 1rem}
+        .card-bcat{
+            display: block;
+            width: 73px;
+            height: 73px;
+        }
+        .card-content{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+        }
+        .item-title{
+            font-size: 0.6875rem;
+            font-weight: bold;
+            color: #C8C7CC;
+        }
+        .pt-1{margin-top: 1.5rem}
+        .pb-1{padding-bottom: 1.875rem}
+        .footer{
+            position: absolute;
+            bottom: 2.5rem;
+            font-size: 0.6875rem;
+            left: 50%;
+            margin-left: -60px;
+        }
+    </style>
+    <div>
+        <section class="head-back">
+            我的积分
+        </section>
+
+        <section class="card">
+            <div class="card-head">
+                <img class="card-bcat" src="./img/mao@3x.png" alt="bcat">
+                <div class="ml-1">
+                    <p class="title">BCAT</p>
+                    <p class="small-title">15</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="item">
+                    <p class="item-title">猫点</p>
+                    <p class="pb-1 small-title">522</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">总积分</p>
+                    <p class="pb-1 small-title">12</p>
+                </div>
+            </div>
+        </section>
+        <p class="footer">本服务由大猫城堡提供</p>
+    </div>
+</body>
+
+</html>
