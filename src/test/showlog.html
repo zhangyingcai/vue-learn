@@ -26,10 +26,7 @@
             font-weight: bold;
             color: white;
             text-align: center;
-            background: -webkit-linear-gradient(left, #FFB726 , #FF9C07); /* Safari 5.1 - 6.0 */
-            background: -o-linear-gradient(right, #FFB726, #FF9C07); /* Opera 11.1 - 12.0 */
-            background: -moz-linear-gradient(right, #FFB726, #FF9C07); /* Firefox 3.6 - 15 */
-            background: linear-gradient(to right, #FFB726 , #FF9C07); /* 标准的语法 */
+            background-color: #3d5876;
         }
         .card{
             position: absolute;
@@ -64,9 +61,14 @@
         }
         .card-content{
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
             overflow: hidden;
+        }
+        .item{
+            flex-basis: 50%;
+            text-align: center;
         }
         .item-title{
             font-size: 0.6875rem;
@@ -97,6 +99,22 @@
                 </div>
             </div>
             <div class="card-content">
+                <div class="item">
+                    <p class="item-title">猫点</p>
+                    <p class="pb-1 small-title">522</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">总积分</p>
+                    <p class="pb-1 small-title">12</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">猫点</p>
+                    <p class="pb-1 small-title">522</p>
+                </div>
+                <div class="item">
+                    <p class="item-title">总积分</p>
+                    <p class="pb-1 small-title">12</p>
+                </div>
                 <div class="item">
                     <p class="item-title">猫点</p>
                     <p class="pb-1 small-title">522</p>
