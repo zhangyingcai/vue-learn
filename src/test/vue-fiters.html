@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+        write something , preferable a number
+        <input v-model="originData">
+        </p>
+        <p>this is 双花括号插值 dobule:{{ originData | double }}</p>
+        <input v-bind:value="originData | double | double" type="text">
+        <p>filters 是一个函数对象; 定义一些接收参数并且第一个参数是插值的函数， 参数可以有多个</p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        filters:{
+            double: function(value){
+                return Number(value)*2 || 0;
+            }
+        },
+        data() {
+            return {
+                originData: 0
+            }
+        },
+        methods: {
+         
+        },
+    })
+    </script>
+</body>
+</html>
