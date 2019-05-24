@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-ref</title>
+</head>
+<body>
+    <div id="app">
+        <p>ref 用于获取dom元素或者 vue 子组件, 其中 ref 用于绑定单个 Dom , refs 用于存放所有注册的 Dom , 必须在 vue 将dom 树 渲染之后才能访问</p>
+        <p ref="p">你填写的内容将在这里呈现</p>
+        <a-component ref="acomponent">12313</a-component>
+        <p>
+        write something , preferable a number 
+        </p>
+        <input v-model="originData" v-on:change = "changeHandle" placeholder="write something">
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+    <script>
+    Vue.component('a-component', {template:'<p>this is a component</p>'})
+    new Vue({
+        el: '#app',
+        filters:{
+            double: function(value){
+                return Number(value)*2 || 0;
+            }
+        },
+        data() {
+            return {
+                originData: 0
+            }
+        },
+        methods: {
+            changeHandle(){
+                this.$refs.p.innerText = this.originData || 'shit'
+                this.$refs.acomponent.innerText = this.originData || 'can you write'
+                console.log(this.$refs.acomponent)
+            }
+        },
+    })
+    </script>
+</body>
+</html>

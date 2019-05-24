@@ -12,9 +12,10 @@
         <p>{{ countAlias }}</p>
         <p>{{ countPlusLocalState }}</p>
         <p>{{ countDouble }}</p>
+        <input type="text" v-model.number="mul" @change="mulChange" placeholder="请输入倍数">
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.0/vuex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.1.0/vuex.js"></script>
     <script>
         // import {mapState} from 'vuex';
         const store = new Vuex.Store({
@@ -23,6 +24,14 @@
             },
             getters:{
                 countDouble:state => state.count * 2
+            },
+            mutations:{
+                countincrement:(state, obj) =>{
+                    state.count = state.count * obj.mul
+                }
+            },
+            actions:{
+                
             }
         });
     new Vue({
@@ -31,7 +40,8 @@
         data() {
             return {
                 localCount: 3,
-                countDouble: this.$store.getters.countDouble
+                countDouble: this.$store.getters.countDouble,
+                mul: 0
             }
         },
         computed:{
@@ -45,7 +55,12 @@
                 return state.count + this.localCount
                 }
             })
-        }
+        },
+        methods: {
+            mulChange(){
+                this.$store.commit('countincrement', { mul:this.mul })
+            }
+        },
     })
     </script>
 </body>
