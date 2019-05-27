@@ -9,22 +9,35 @@
 <body>
     <div id="app">
         <button-counter></button-counter>
+        <test-name></test-name>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <script>
-        vue.component('button-counter', {
-            data(){
+        // 创建一个组件 全局注册
+        Vue.component('button-counter', {
+            data(){ // 必须是一函数
                 return {
                     count:0
                 }
             },
             template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
         })
+
+        const ReTestName = {}
+
+        Vue.component('test-name', {
+            data(){ // 必须是一函数
+                return {
+                    count:0
+                }
+            },
+            template: '<p>name</p>'
+        })
     var vue = new Vue({
         el: '#app',
-        components: {},
+        components: { TestName },
         data() {
             return {
                 answer: 'I cannot give you an answer until you ask a question!',
