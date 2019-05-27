@@ -20,6 +20,7 @@
         <p :style="test">文字</p>
 
         <div :class="classObject">vue class 绑定的是一个对象, 键是属性名, 值是控制开关, 还可以是数组。内联使用的时候，通过CSS属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用引号括起来) 来命名</div>
+        <p v-bind:class="{active:active}"> 我的 </p>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
     <script>
@@ -34,7 +35,8 @@
                 classObject: {
                     active: true,
                     'text-center': false
-                }
+                },
+                active:true
             }
         },
         methods: {
