@@ -8,7 +8,8 @@
 </head>
 <body>
   <div id="app">
-    <input type="text" v-model="data">
+    <input type="text" v-model="mydata">
+    <input type="text" :value="abc*5" @input="$event=>abc=$event.target.value/5 || 0">
     <p>{{abc}}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -21,7 +22,7 @@
       }
     },
     computed: {
-      data: {
+      mydata: {
         set: function(newValue) {
           this.abc = newValue / 5 || 0
         },
