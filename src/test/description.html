@@ -67,14 +67,25 @@
             border-bottom: 1px solid #ececec;
         }
 
-        .card-header::before {
+         .card-header::before {
             content: '';
             position: absolute;
             left: 5px;
-            top: 2.2rem;
+            top: 1.2rem;
             height: 18px;
             width: 6px;
             background-color: #F1D246;
+            }
+
+        .bcat-header::before {
+            position: absolute;
+            content: '';
+            background: url(https://img.bcathub.com/bcathub/bcatinfo/gongzuomao.png) 100% 100%;
+            background-size: cover;
+            width: 183px;
+            height: 119px;
+            right: 1.25rem;
+            top: 0.5rem;
         }
 
         .bcat-padd {
@@ -131,9 +142,11 @@
         .mt-5 {
             margin-top: 5rem;
         }
+
         .mb-5 {
             margin-bottom: 5rem;
         }
+
         .content {
             height: 100%;
         }
@@ -166,14 +179,15 @@
         .list li:last-child {
             border-bottom: 0;
         }
-        .nomore{
+
+        .nomore {
             color: white;
         }
     </style>
     <div id="app" class="content">
         <section class="bcat-card-first mb-1">
             <div class="bcat-header">
-                <h4 class="bcat-shadow-title bcat-title text-center">大猫城堡使用说明文档</h4>
+                <h4 class="bcat-shadow-title bcat-title">大猫城堡使用说明文档</h4>
             </div>
             <div class="bcat-card">
                 <p class="bcat-margin card-content font-bold">
@@ -185,7 +199,7 @@
 
         <section class="bcat-card-first mb-1">
             <div class="bcat-card">
-                <div class="card-header bcat-shadow-title mt-1">大猫城堡总览</div>
+                <div class="card-header bcat-shadow-title">大猫城堡总览</div>
                 <ul class="list">
                     <li>
                         <a class="list-item font-bold" href="introduction.html">1.大猫城堡介绍</a>
@@ -205,7 +219,7 @@
 
         <section class="bcat-card-first mb-1">
             <div class="bcat-card">
-                <div class="card-header bcat-shadow-title mt-1">"猫点"使用文档</div>
+                <div class="card-header bcat-shadow-title">"猫点"使用文档</div>
                 <ul class="list">
                     <li>
                         <a class="list-item font-bold" href="maodian.html">1."猫点"积分概述及规范</a>
@@ -216,46 +230,45 @@
                     <li>
                         <a class="list-item font-bold" href="#">3.如何获取猫点？</a>
                     </li>
-                    <ul class="list">
-                        <li>
-                            <a class="list-item" href="myself.html">3.1 自我介绍奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="bcatreward.html">3.2 优质内容及活跃用户奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="check.html">3.3 APP内积分签到奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="task.html">3.4 任务奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="tobcat.html">3.5 虚拟礼物换取猫点积分</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="userreward.html">3.6 用户打赏奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="report.html">3.7 举报奖励</a>
-                        </li>
+                    <li>
+                        <a class="list-item" href="myself.html">3.1 自我介绍奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="bcatreward.html">3.2 优质内容及活跃用户奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="check.html">3.3 APP内积分签到奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="task.html">3.4 任务奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="tobcat.html">3.5 虚拟礼物换取猫点积分</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="userreward.html">3.6 用户打赏奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="report.html">3.7 举报奖励</a>
+                    </li>
 
-                        <li>
-                            <a class="list-item" href="contributionreward.html">3.8 社区贡献奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="activityaward.html">3.9 社区活动奖励</a>
-                        </li>
-                        <li>
-                            <a class="list-item" href="gamereward.html">3.10 社区游戏获取</a>
-                        </li>
-                    </ul>
+                    <li>
+                        <a class="list-item" href="contributionreward.html">3.8 社区贡献奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="activityaward.html">3.9 社区活动奖励</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="gamereward.html">3.10 社区游戏获取</a>
+                    </li>
+
                 </ul>
             </div>
         </section>
 
         <section class="bcat-card-first mb-1">
             <div class="bcat-card">
-                <div class="card-header bcat-shadow-title mt-1">大猫城堡APP常见问题解答</div>
+                <div class="card-header bcat-shadow-title">大猫城堡APP常见问题解答</div>
                 <ul class="list">
                     <li class="mb-1">
                         <a class="list-item font-bold" href="question.html">如何在pc端更好的发布长文章？</a>
