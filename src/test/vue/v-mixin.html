@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mixin</title>
+</head>
+<body>
+  <div id="app">
+    <test></test>
+    <!--  -->
+    <p>mixin 混入的数据和方法以组件内部的优先,混入的组件生命周期钩子函数会被合并，并且会在组件自身钩子之前调用</p>
+    <p>全局混入会影响每一个之后创建的 vue 实例</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const mixin = {
+      beforeCreate() {
+        console.log(`you can't use data and event`)
+      },
+      created(){
+        this.hello()
+        this.baby()
+      },
+      methods: {
+        hello(){
+          console.log('hi boy!')
+        },
+        baby(){
+          console.log('hi baby')
+        }
+      }
+    }
+    var test = Vue.extend({
+      name:'test',
+      template:`<p>name</p>`,
+      mixins: [mixin], // 局部混入
+      created(){
+        console.log('i am test')
+      },
+      methods: {
+        hello(){
+          console.log('hi dd') // 我先
+        }
+      }
+    })
+  new Vue({
+    el: '#app',
+    components:{
+      test
+    }
+  })
+  </script>
+</body>
+</html>

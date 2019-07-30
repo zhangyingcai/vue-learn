@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>slot</title>
+</head>
+<body>
+  <div id="app">
+    <p>solt 内容分发api</p>
+    <base-button></base-button>
+    <navigation-link url="123abc">
+      我是默认展示的内容
+    </navigation-link>
+    <p>编译作用域</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const baseButton = Vue.extend({
+      template:`
+      <button>
+      <slot>默认展示内容</slot>
+      </button>`
+    })
+    const navigationLink = Vue.extend({
+      props: {
+        url: String
+      },
+      template: `
+      <a
+        v-bind:href="url"
+        class="nav-link"
+      >
+      {{url}}
+        <slot></slot>
+      </a>`
+    })
+    new Vue({
+      el: '#app',
+      components: {
+        baseButton,
+        navigationLink
+      }
+    })
+  </script>
+</body>
+</html>
