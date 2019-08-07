@@ -13,6 +13,11 @@
         <input v-model="question">
         </p>
         <p>{{ answer }}</p>
+        <input v-model="searchText"/>
+        <p>{{ searchText }}</p>
+        <p>handler 方法名称</p>
+        <p>deep 深度监听 引用对象 键值改变</p>
+        <p>immediate 回调会在监听开始之后立即调用</p>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
@@ -23,13 +28,21 @@
         data() {
             return {
                 answer: 'I cannot give you an answer until you ask a question!',
-                question: ''
+                question: '',
+                searchText:'123'
             }
+        },
+        created() {
+
         },
         watch: {
             question: function (){
                 this.answer = 'Waiting for you to stop typing...';
                 this.debouncedGetAnswer()
+            },
+            searchText: {
+                handler: 'showText',
+                immediate: true
             }
         },
         created() {
@@ -46,6 +59,9 @@
                 setTimeout(function(){
                     vm.answer = "yes"
                 }, 2000)
+            },
+            showText() {
+                console.log(this.searchText)
             }
         },
     })
